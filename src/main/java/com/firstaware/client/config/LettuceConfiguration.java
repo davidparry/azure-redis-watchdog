@@ -41,13 +41,6 @@ public class LettuceConfiguration {
         return redisClient;
     }
 
-    @Bean(name = "redisPublishConnection")
-    @Scope(value = "singleton")
-    public StatefulRedisPubSubConnection<String, String> redisPublishConnection(RedisClient redisClient) {
-        StatefulRedisPubSubConnection<String, String> connection = redisClient.connectPubSub();
-        return connection;
-    }
-
     @Bean(name = "redisIdentityPublishConnection")
     @Scope(value = "singleton")
     public StatefulRedisPubSubConnection<String, String> redisIdentityPublishConnection(RedisClient redisClient) {
